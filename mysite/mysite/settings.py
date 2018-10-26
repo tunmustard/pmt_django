@@ -133,6 +133,8 @@ EMAIL_HOST_USER = 'anton.tushev@primetals.com'
 EMAIL_HOST_PASSWORD = 'hugoboSS28'
 EMAIL_USE_TLS = True
 
+DEFAULT_FROM_EMAIL  = 'anton.tushev@primetals.com'
+
 
 
 
