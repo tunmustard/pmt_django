@@ -1,15 +1,1005 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+
+<link rel="shortcut icon" href="https://www.primetals.com/favicon.ico" type="image/x-icon">
+<title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+<meta name="generator" content="Django">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'base/style.css' %}" media="all">
+<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/solid.css' %}" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/fontawesome.css' %}" crossorigin="anonymous">
+<script src="{% static 'base/moving_header.js' %}" type="text/javascript"></script>
+
 </head>
 <body>
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
+
+
+
+
+<span class="scroll-to-top" style="display: none;">
+    <span class="scroll-to-top-icon"></span>
+</span>
+
+<nav id="navigation" class="navbar">
+    <div class="container-fluid w-1400">
+        <div class="row">
+            <div class="col-xs-12 navbar-wrap">
+                <div class="navbar-header">
+                    <div class="logo">
+                        <a href="https://www.primetals.com/">
+                            <img alt="logo" src="{% static 'base/logo.png' %}" width="257" height="66">
+                        </a>
+                    </div>
+                    <button type="button" class="navbar-toggle main-menu" data-toggle="collapse" data-target="#navMain">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <button type="button" class="navbar-toggle search" data-toggle="collapse" data-target="#navSearch">
+                        <span><i class="fa fa-search"></i></span>
+                    </button>
+                    <button type="button" class="navbar-toggle lang" data-toggle="collapse" data-target="#navLanguages">
+                        <span>
+                            EN
+                        </span>
+                    </button>
+                </div>
+                <div class="collapse-wrap">
+                    <div class="row">
+                        <div class="col-xs-12 collapse-top">
+                            <i class="fas fa-angle-right">asdfsdasdasdf</i>
+<div id="currentLanguage">
+    <span>EN</span>
+</div>
+
+<div class="collapse navbar-collapse navLanguages" id="navLanguages">
+    <ul class="nav navbar-nav hidden-md hidden-lg mobile">
+        <li class="active"><a href="https://www.primetals.com/careers/">EN</a></li>
+        <li class=""><a href="https://www.primetals.com/de/karriere/">DE</a></li>
+        <li class=""><a href="https://www.primetals.com/jp/%E6%8E%A1%E7%94%A8/">JA</a></li>
+        <li class=""><a href="https://www.primetals.com/cn/%E5%B7%A5%E4%BD%9C%E6%9C%BA%E4%BC%9A/">ZH</a></li>
+        <li class=""><a href="https://www.primetals.com/pt/careers/">PT</a></li>
+        <li class=""><a href="https://www.primetals.com/ru/karera/">RU</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+        <li class="dropdown">
+            <a class="dropdown-toggle fa fa-globe fa-2x" data-toggle="dropdown" href="#"></a>
+            <ul class="dropdown-menu">
+                <li class="active"><a href="https://www.primetals.com/careers/">EN</a></li>
+                <li class=""><a href="https://www.primetals.com/de/karriere/">DE</a></li>
+                <li class=""><a href="https://www.primetals.com/jp/%E6%8E%A1%E7%94%A8/">JA</a></li>
+                <li class=""><a href="https://www.primetals.com/cn/%E5%B7%A5%E4%BD%9C%E6%9C%BA%E4%BC%9A/">ZH</a></li>
+                <li class=""><a href="https://www.primetals.com/pt/careers/">PT</a></li>
+                <li class=""><a href="https://www.primetals.com/ru/karera/">RU</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+                            <div class="collapse navbar-collapse navSearch" id="navSearch">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle fa fa-search fa-2x" href="#"></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <form action="/search-results/" method="get">
+                        <input type="text" class="search-top" id="search-top" placeholder="search..." name="search">
+                        <button class="btn btn-icon" type="submit">search</button>
+                    </form>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 collapse-bottom">
+                            <div class="collapse navbar-collapse navMain" id="navMain">
+							<ul class="nav navbar-nav">
+							<li class="dropdown dropdown-level0"><a href="https://www.primetals.com/">Portfolio<i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level0">
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/ironmaking/">Ironmaking</a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/ironmaking/circular-pelletizing-technology/">Circular Pelletizing Technology</a></li>
+							<li><a href="https://www.primetals.com/portfolio/ironmaking/sinter-plant/">Sinter Plant</a></li>
+							<li><a href="https://www.primetals.com/portfolio/ironmaking/blast-furnace/">Blast Furnace</a></li>
+							<li><a href="https://www.primetals.com/portfolio/ironmaking/corexr/">Corex®</a></li>
+							<li><a href="https://www.primetals.com/portfolio/ironmaking/finexr/">Finex®</a></li>
+							<li><a href="https://www.primetals.com/portfolio/ironmaking/midrexr/">Midrex®</a></li>
+							</ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/steelmaking/">Steelmaking</a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/steelmaking/converter-carbon-steelmaking/">Converter Carbon Steelmaking</a></li>
+							<li><a href="https://www.primetals.com/portfolio/steelmaking/converter-stainless-steelmaking/">Converter Stainless Steelmaking</a></li>
+							<li><a href="https://www.primetals.com/portfolio/steelmaking/electric-steelmaking/">Electric Steelmaking</a></li>
+							<li><a href="https://www.primetals.com/portfolio/steelmaking/secondary-metallurgy/">Secondary Metallurgy</a></li>
+							<li><a href="https://www.primetals.com/portfolio/steelmaking/hot-metal-treatment/">Hot Metal Treatment</a></li>
+							</ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/continuous-casting/">Continuous Casting</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1"><li><a href="https://www.primetals.com/portfolio/continuous-casting/slab-casting/">Slab Casting</a></li>
+							<li><a href="https://www.primetals.com/portfolio/continuous-casting/bloom-casting/">Bloom Casting</a></li>
+							<li><a href="https://www.primetals.com/portfolio/continuous-casting/beam-blank-casting/">Beam-Blank Casting</a></li>
+							<li><a href="https://www.primetals.com/portfolio/continuous-casting/billet-casting/">Billet Casting</a></li>
+							<li><a href="https://www.primetals.com/portfolio/continuous-casting/vertical-casting/">Vertical Casting</a></li>
+							</ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/hot-rolling-long/">Hot Rolling Long</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1"><li><a href="https://www.primetals.com/portfolio/hot-rolling-long/bar-mill/">Bar Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-long/rod-mill-equipment/">Rod Mill Equipment</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-long/section-mill/">Section Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-long/endless-rolling/">Endless Rolling</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-long/efficient-heating-system/">Efficient Heating System</a></li>
+							</ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/hot-rolling-flat/">Hot Rolling Flat</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-flat/hot-strip-mill/">Hot Strip Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-flat/plate-mill/">Plate Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-flat/steckel-mill/">Steckel Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-flat/plate-steckel-mill/">Plate-Steckel Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-flat/endless-rolling-mill/">Endless Rolling Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/hot-rolling-flat/morgoil-bearings/">Morgoil Bearings</a></li></ul></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/cold-rolling/">Cold Rolling</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/cold-rolling/tandem-cold-mill/">Tandem Cold Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/cold-rolling/coupled-pickling-line-tandem-cold-mill/">Coupled Pickling Line &amp; Tandem Cold Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/cold-rolling/reversing-cold-mill/">Reversing Cold Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/cold-rolling/skin-pass-mill/">Skin-Pass Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/cold-rolling/special-steel-mill/">Special Steel Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/cold-rolling/morgoil-bearings/">Morgoil Bearings</a></li>
+							</ul></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/non-ferrous-rolling/">Non Ferrous Rolling</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/non-ferrous-rolling/aluminum-hot-rolling-mill/">Aluminum Hot Rolling Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/non-ferrous-rolling/aluminum-cold-rolling-mill/">Aluminum Cold Rolling Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/non-ferrous-rolling/aluminum-foil-mill/">Aluminum Foil Mill</a></li>
+							<li><a href="https://www.primetals.com/portfolio/non-ferrous-rolling/copper-cold-and-foil-rolling-mill/">Copper Cold and Foil Rolling Mill</a></li>
+							</ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/processing/">Processing</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/processing/pickling-lines/">Pickling Lines</a></li>
+							<li><a href="https://www.primetals.com/portfolio/processing/continuous-annealing-lines/">Continuous Annealing Lines</a></li>
+							<li><a href="https://www.primetals.com/portfolio/processing/metallic-coating-lines/">Metallic Coating Lines</a></li>
+							<li><a href="https://www.primetals.com/portfolio/processing/organic-coating-lines/">Organic Coating Lines</a></li>
+							<li><a href="https://www.primetals.com/portfolio/processing/continuous-stainless-steel-lines/">Continuous Stainless Steel Lines</a></li>
+							<li><a href="https://www.primetals.com/portfolio/processing/electrolytic-cleaning-lines/">Electrolytic Cleaning Lines</a></li>
+							<li><a href="https://www.primetals.com/portfolio/processing/strip-finishing-lines/">Strip-Finishing Lines</a></li>
+							</ul></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/endless-casting-rolling/">Endless Casting &amp; Rolling</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1"><li><a href="https://www.primetals.com/portfolio/endless-casting-rolling/arvedi-esp/">Arvedi ESP</a></li>
+							<li><a href="https://www.primetals.com/portfolio/endless-casting-rolling/winlink/">WinLink</a></li>
+							</ul></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/mini-mills/">Mini Mills</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1"><li><a href="https://www.primetals.com/portfolio/mini-mills/mini-mills-for-long-products/">Mini Mills for Long Products</a></li>
+							<li><a href="https://www.primetals.com/portfolio/mini-mills/mini-mills-for-flat-products/">Mini Mills for Flat Products</a>
+							</li></ul>
+							</li>
+							<li><hr></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/digitalization/">Digitalization</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/digitalization/production-management-system/">Production Management System</a></li>
+							<li><a href="https://www.primetals.com/portfolio/digitalization/through-process-optimization/">Through-Process Optimization</a></li>
+							<li><a href="https://www.primetals.com/portfolio/digitalization/maintenance-and-asset-technology/">Maintenance and Asset Technology</a></li>
+							<li><a href="https://www.primetals.com/portfolio/digitalization/the-fully-automated-plant/">The Fully Automated Plant</a></li></ul></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/electrics-automation/">Electrics &amp; Automation</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/electrics-automation/plant-process-automation/">Plant Process Automation</a>
+							</li></ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/lifecycle-services/">Lifecycle Services</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/eco-solutions/">ECO Solutions</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1"><li><a href="https://www.primetals.com/portfolio/eco-solutions/gas-cleaning/">Gas Cleaning</a></li>
+							<li><a href="https://www.primetals.com/portfolio/eco-solutions/energy-efficiency/">Energy Efficiency</a></li>
+							<li><a href="https://www.primetals.com/portfolio/eco-solutions/by-product-recycling/">By-Product Recycling</a>
+							</li></ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/innovation/">Innovation</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/innovation/the-future-of-metals/">The Future of Metals</a></li>
+							<li><a href="https://www.primetals.com/portfolio/innovation/innovation-at-work/">Innovation at work</a>
+							</li></ul>
+							</li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/portfolio/integrated-plants-solutions/">Integrated Plants &amp; Solutions</a><i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level1">
+							<li><a href="https://www.primetals.com/portfolio/integrated-plants-solutions/business-development/">Business Development</a></li>
+							<li><a href="https://www.primetals.com/portfolio/integrated-plants-solutions/financial-services/">Financial Services</a></li>
+							<li><a href="https://www.primetals.com/portfolio/integrated-plants-solutions/turnkey-services/">Turnkey Services</a></li>
+							<li><a href="https://www.primetals.com/portfolio/integrated-plants-solutions/process-technology-consulting/">Process &amp; Technology Consulting</a></li></ul>
+							</li></ul>
+							</li>
+							<li class="dropdown dropdown-level0"><a href="https://www.primetals.com/mspace/">m.space<i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i><ul class="dropdown-menu dropdown-menu-level0">
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/macademy/">m.academy</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/mcrane/">m.crane</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/mbuy/">m.buy</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/mdoc/">m.doc</a></li>
+							</ul></li>
+							<li class="dropdown dropdown-level0"><a href="https://www.primetals.com/about-us/company-profile/">About Us<i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level0">
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/about-us/company-profile/">Company Profile</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/about-us/technological-legacy/">Technological Legacy</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/metals-magazine/issue-02-2018/new-frontiers-ahead/">Pioneers at Heart</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/about-us/corporate-organization/">Corporate Organization</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/about-us/supply-chain-management/">Supply Chain Management</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/compliance/">Compliance, QM &amp; EHS, Tax</a></li></ul></li>
+							<li class="dropdown dropdown-level0 active"><a href="https://www.primetals.com/careers/">Careers</a></li>
+							<li class="dropdown dropdown-level0"><a href="https://www.primetals.com/contact-us/contact-form/">Contact us<i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level0"><li class="dropdown dropdown-level1"><a href="https://www.primetals.com/contact-us/locations/">Locations</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/contact-us/contact-form/">Contact Form</a>
+							</li></ul>
+							</li>
+							<li class="dropdown dropdown-level0"><a href="https://www.primetals.com/press-media/overview/">Press &amp; Media<i class="fa fa-angle-down hidden-xs hidden-sm"></i></a>
+							<i class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown"></i>
+							<ul class="dropdown-menu dropdown-menu-level0">
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/news/?no_cache=1">News</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/events/">Events</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/newsletter/">Newsletter</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/metals-magazine/">Metals Magazine</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/media-resources/">Media resources</a></li>
+							<li class="dropdown dropdown-level1"><a href="https://www.primetals.com/press-media/apps/">Apps</a></li></ul></li></ul></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+	window.cookieconsent_options = {
+		message: "\r\This site uses cookies. By using our website you are agreeing to our Cookie Policy. <a href=\"https:\/\/www.primetals.com\/press-media\/imprint-privacy-policy\/\">More info<\/a>\r\n",
+		dismiss: "I Accept",
+		position: 'bottom'
+	};
+</script>
+
+
+		
+
+
+
+
+        
+    <header class="sub-page-header   ">
+        <div class="container-fluid w-1400">
+            <div class="row">
+                <div class="col-xs-12 sub-page-header-wrapper">
+                    
+                        
+                                <img src="{% static 'base/csm_Banner_karrier_450x1400_5b5925f07c.jpg' %}" alt="" width="1400" height="451">
+
+                                
+                                        <div class="detail-page-title">
+                                            <div id="detail-anch"></div>
+                                            <h1>Наш новый вебсайт</h1>
+                                        </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+<section class="breadcrumbs hidden-xs">
+    <div class="container-fluid w-1400">
+        <div class="row">
+            <div class="col-xs-12 breadcrumb-wrap">
+                <div class="container">
+                    <ol class="breadcrumb"><li><a href="https://www.primetals.com/">Home</a></li><li class="active">Careers</li></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="content">
+    
+
+      
+    <section class="grid-row container-fluid w-1400 subsite-intro frame-layout frame-layout-0 ">
+        <div class="col-xs-12 subsite-intro-wrap">
+            <div class="container">
+                
+    <div class="row flexrow">
+        
+            <div class="col-xs-12 col-md-12">
+                
+
+
+    
+            
+                    
+    <section class="grid-row frame-layout frame-layout-0">
+        <div class="container">
+            
+    <div class="row flexrow">
+        
+            <div class="col-xs-12 col-md-9">
+                
+<section id="c1050" class="main frame-layout frame-layout-0">
+<div class="container">
+<div class="frame frame-default frame-type-text ">
+
+<header>
+<h2 class="">FIND OUT MORE ABOUT OPPORTUNITIES TO WORK WITH US IN YOUR REGION.</h2>
+<h3 class="">Primetals Technologies is dedicated to engineering and manufacturing
+ excellence in the metals industry. A joint venture of 
+Mitsubishi-Hitachi Metals Machinery and Siemens, the innovative and 
+technological strengths of both companies have been merged to form a 
+globally operating enterprise that will be an elite supplier of 
+state-of-the-art technologies, plants, products and services for the 
+iron, steel and nonferrous industrial sectors.</h3>
+</header>
+			
+<p>From complex engineering projects to effective 
+business management, we are a company that thrives on technology where 
+innovation in every area is valued. As the world leader in metallurgical
+ plant solutions, we work passionately to continuously improve and 
+challenge ourselves to accomplish new goals, increase our customers’ 
+competitiveness, and make a lasting contribution to society. It is our 
+people who help us achieve this vision and whilst doing this, they enjoy
+ diverse careers across our global operations with opportunities to 
+develop and unfold their creative potential. We aim to select the right 
+people from whatever culture and background, if you want to be a part of
+ our exciting future, please review the opportunities in the countries 
+that we operate in:</p>
+<p>
+{% block content %}
+{% endblock %}
+</p>
+</div>
+</div>
+</section>
+
+            </div>
+
+            <div class="col-xs-12 col-md-3">
+                
+<section id="c1049" class="main frame-layout frame-layout-0">
+<div class="container">
+<div class="frame frame-default frame-type-image ">
+<div class="ce-image ce-center ce-above">
+<div class="rowce-gallery" data-ce-columns="1" data-ce-images="1">
+<div class="ce-outer"><div class="ce-inner">
+<div class="row ce-row">
+<div class="ce-column col-xs-12 col-md-12">
+<figure class="image"><img class="image-embed-item" title="CAREERS" src="{% static 'base/karriere_circle.png' %}" alt="" width="260" height="260"></figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+            </div>
+        
+    </div>
+
+        </div>
+    </section>
+
+                
+        
+
+
+
+
+
+
+
+
+
+            </div>
+        
+    </div>
+
+            </div>
+        </div>
+    </section>
+
+                
+        
+
+    
+            
+                    
+    <section class="grid-row frame-layout frame-layout-0">
+        <div class="container">
+            
+    <div class="row flexrow">
+        
+            <div class="col-xs-12 col-md-9">
+                
+<section id="c1051" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-header ">
+
+<header><h2 class="">LOCAL JOBS &amp; CAREERS WEBSITES</h2></header>
+
+</div></div></section>
+
+
+<section class="main">
+    <div class="container">
+        <div class="panel-group" id="accordion">
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="true" class=" collapsed ">
+                                <h3>Locations in Europe</h3>
+                                <span class="toggle-icon"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse18" aria-expanded="true" class="panel-collapse collapse">
+
+                        <div class="panel-body">
+
+<section id="c20" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-text "><ul><li><a href="https://www.primetals.com/karriere-at/" target="_blank">Career site of Austria</a></li><li><a href="https://www.primetals.com/careers/career-site-of-france/">Career site of France</a></li><li><a href="https://www.primetals.com/careers/career-site-of-germany/">Career site of Germany</a></li><li><a href="https://www.primetals.com/careers/career-site-of-italy/">Career site of Italy</a></li><li><a href="https://www.primetals.com/careers/career-site-of-poland/">Career site of Poland</a></li><li><a href="https://www.primetals.com/careers/career-site-of-uk/">Career site of UK</a></li><li><a href="https://www.primetals.com/careers/career-site-of-ukraine/">Career site of Ukraine</a></li></ul></div></div></section>
+
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="true" class="
+                                    collapsed
+                                    
+                                ">
+                                <h3>Locations in North America</h3>
+                                <span class="toggle-icon"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse19" aria-expanded="true" class="panel-collapse collapse">
+
+                        <div class="panel-body">
+
+            
+<section id="c9658" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-text "><ul><li><a href="https://www.primetals.com/careers/career-site-of-united-states-of-america/">​Career site of U.S.</a></li><li><a href="https://www.primetals.com/careers/career-site-of-mexico/">Career site of Mexico</a></li></ul></div></div></section>
+
+    
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1052" aria-expanded="true" class=" collapsed">
+                                <h3>Locations in South America</h3>
+                                <span class="toggle-icon"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1052" aria-expanded="true" class="panel-collapse collapse">
+
+                        <div class="panel-body">
+
+            
+<section id="c9659" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-text "><ul><li><a href="https://www.primetals.com/careers/career-site-of-brazil/">Career site of Brazil</a></li></ul></div></div></section>
+
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1053" aria-expanded="true" class="collapsed">
+                                <h3>Locations in Asia</h3>
+                                <span class="toggle-icon"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1053" aria-expanded="true" class="panel-collapse collapse">
+
+                        <div class="panel-body">
+
+<section id="c9660" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-text "><ul><li><a href="https://www.primetals.com/careers/career-site-of-china/">Career site of China</a></li><li><a href="https://www.primetals.com/careers/career-site-of-japan/">Career site of Japan</a></li><li><a href="https://www.primetals.com/careers/career-site-of-india/">Career site of India</a></li></ul></div></div></section>
+
+    
+                        </div>
+                    </div>
+                </div>
+            
+
+        </div>
+    </div>
+</section>
+            </div>
+        
+            <div class="col-xs-12 col-md-3">
+                
+            </div>
+        
+    </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3 footer-col">
+                                
+                                    <ul>
+                                        
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/primetals-technologies/">
+                <h5>
+                    
+                            Primetals Technologies
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/primetals-technologies/ironmaking/">
+                        Ironmaking
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/primetals-technologies/steelmaking/">
+                
+                        Steelmaking
+                    
+            </a>
+        </li>
+
+                                        
+                                    </ul>
+                                
+                            </div>
+                            <div class="col-xs-12 col-sm-3 footer-col">
+                                
+                                    <ul>
+                                        
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/">
+                <h5>
+                    
+                            Competences
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/digitalization/">
+                
+                        Digitalization
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/electrics-automation/">
+                
+                        Electrics &amp; Automation
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/lifecycle-services/">
+                
+                        Lifecycle Services
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/eco-solutions/">
+                
+                        ECO Solutions
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/innovation/">
+                
+                        Innovation
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/competences/integrated-plants-solutions/">
+                
+                        Integrated Plants &amp; Solutions
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                    </ul>
+                                
+                                
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.primetals.com/mspace/">
+                                                <h5 class="text-lowercase">
+                                                    m.space
+                                                </h5>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                
+                            </div>
+                            <div class="col-xs-12 col-sm-3 footer-col">
+                                
+                                    <ul>
+                                        
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/about-us/">
+                <h5>
+                    
+                            About Us
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/company-profile/">
+                
+                        Company Profile
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/compliance-qm-ehs-tax/">
+                
+                        Compliance, QM &amp; EHS, TAX
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/corporate-organization/">
+                
+                        Corporate Organization
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/locations/">
+                
+                        Locations
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/supply-chain-management/">
+                
+                        Supply Chain Management
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                            
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/technological-legacy/">
+                
+                        Technological Legacy
+                    
+            </a>
+        </li>
+    
+
+                                        
+                                    </ul>
+                                
+                            </div>
+                            <div class="col-xs-12 col-sm-3 footer-col">
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            <ul>
+                                                
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/contact/">
+                <h5>
+                    
+                            Contact
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+                                            </ul>
+                                        
+                                    
+                                
+                                    
+                                        
+                                            <ul>
+                                                
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/press-media/">
+                <h5>
+                    
+                            Press &amp; Media
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+                                            </ul>
+                                        
+                                    
+                                
+                                    
+                                        
+                                            <ul>
+                                                
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/careers/">
+                <h5>
+                    
+                            Careers
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+                                            </ul>
+                                        
+                                    
+                                
+                                    
+                                        
+                                            <ul>
+                                                
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/apps/">
+                <h5>
+                    
+                            Apps
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+                                            </ul>
+                                        
+                                    
+                                
+                                    
+                                        
+                                            <ul>
+                                                
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/imprint-privacy-policy/">
+                <h5>
+                    
+                            Imprint &amp; Privacy Policy
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+                                            </ul>
+                                        
+                                    
+                                
+                                    
+                                        
+                                            <ul>
+                                                
+    
+        <li>
+            <a href="https://www.primetals.com/footer-links/sitemap/">
+                <h5>
+                    
+                            Sitemap
+                        
+                </h5>
+            </a>
+        </li>
+    
+
+                                            </ul>
+                                        
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-8 footer-copyrights">
+                                <span>© Primetals Technologies</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	function updateSpamProtectedEmailAddresses() {
+		var elems = document.getElementsByTagName('span');
+		for (var i = 0; i < elems.length; i++) {
+			if (elems[i].className.match(/bots\-nightmare/)) elems[i].innerHTML = '@';
+			if (elems[i].className.match(/bots\-destruction/)) elems[i].innerHTML = '.';
+		}
+	}
+	updateSpamProtectedEmailAddresses();
+	/* ]]> */
+	</script>
+
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+<div id="cboxWrapper">
+<div>
+<div id="cboxTopLeft" style="float: left;"></div>
+<div id="cboxTopCenter" style="float: left;"></div>
+<div id="cboxTopRight" style="float: left;"></div>
+</div><div style="clear: left;">
+<div id="cboxMiddleLeft" style="float: left;"></div>
+<div id="cboxContent" style="float: left;">
+<div id="cboxTitle" style="float: left;"></div>
+<div id="cboxCurrent" style="float: left;"></div>
+<button type="button" id="cboxPrevious"></button>
+<button type="button" id="cboxNext"></button>
+<button type="button" id="cboxSlideshow"></button>
+<div id="cboxLoadingOverlay" style="float: left;"></div>
+<div id="cboxLoadingGraphic" style="float: left;"></div></div>
+<div id="cboxMiddleRight" style="float: left;"></div></div>
+<div style="clear: left;">
+<div id="cboxBottomLeft" style="float: left;"></div>
+<div id="cboxBottomCenter" style="float: left;"></div>
+<div id="cboxBottomRight" style="float: left;"></div></div></div>
+<div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;">
+</div>
+</div>
+
+
+
+
   
 </body>
 </html>

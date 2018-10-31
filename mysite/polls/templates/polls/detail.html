@@ -1,7 +1,12 @@
 <h1>{{ question.question_text }}</h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
+<ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+<p>Voted users: <strong>{% for voted_user in question.user_performed.all %}{{ voted_user }} {% endfor %}</strong></p>
+<a href="{% url 'polls:results' question.id %}">results</a>
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
 {% for choice in question.choice_set.all %}
@@ -10,3 +15,4 @@
 {% endfor %}
 <input type="submit" value="Vote">
 </form>
+{% if testtext %}<p><strong>{{ testtext }}</strong></p>{% endif %}

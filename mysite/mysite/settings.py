@@ -120,6 +120,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    "static",
+]
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -127,13 +131,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 # Optional SMTP authentication information for EMAIL_HOST.
-EMAIL_HOST = 'RUMOWK001MSX.pmt.primetals.net'
+EMAIL_HOST = ''
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'anton.tushev@primetals.com'
-EMAIL_HOST_PASSWORD = 'hugoboSS28'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL  = 'anton.tushev@primetals.com'
+DEFAULT_FROM_EMAIL  = ''
 
 
 

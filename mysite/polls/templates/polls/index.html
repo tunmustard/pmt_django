@@ -1,16 +1,12 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 
-
-{% if perms.polls.view_choice %}
-	You have permission
-{% else %}
-	You don't have permission
-{% endif %}
 {% if latest_question_list %}
+{% if testtext %}<p><strong>{{ testtext }}</strong></p>{% endif %}
     <ul>
     {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+		{% if question.user_performed.all %}<li><p>Voted users: <strong>{% for voted_user in question.user_performed.all %}{{ voted_user }} {% endfor %}</strong></p></li>{% endif %}
     {% endfor %}
     </ul>
 {% else %}
