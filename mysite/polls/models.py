@@ -6,6 +6,7 @@ from django.conf import settings
 
 class Pollset(models.Model):
     poll_text = models.CharField(max_length=200)
+    poll_addtext = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     user_performed = models.ManyToManyField(settings.AUTH_USER_MODEL)
     is_active = models.BooleanField(default=True)

@@ -1,18 +1,74 @@
-<h1>{{ question.question_text }}</h1>
+{% extends 'base.html' %}
+{% block content %}
 
-<ul class="messages">
-    {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-<p>Voted users: <strong>{% for voted_user in question.user_performed.all %}{{ voted_user }} {% endfor %}</strong></p>
-<a href="{% url 'polls:results' question.id %}">results</a>
-<form action="{% url 'polls:vote' question.id %}" method="post">
+<section id="c13525" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-div "><hr class="ce-div"></div></div></section>
+<section class="grid-row frame-layout frame-layout-0">
+<div class="container">
+<div class="row flexrow">
+<div class="col-xs-12 col-md-8">
+<section id="c21345" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-textpic "><div class="ce-textpic ce-right ce-below"><div class="ce-bodytext">
+
+<h1>{% if request.user in pollset.user_performed.all %}<i class="fas fa-check-circle" style="color:green"></i>{% endif %} {{ pollset.poll_text }}</h1>
+
+{% if pollset.poll_addtext %}<h3>{{ pollset.poll_addtext }}</h3>{% endif %}
+
+
+
+
+{% if messages %}
+<hr class="ce-div">
+{% for message in messages %}
+<div class="select-error"></div><i class="fa"></i><span class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</span>
+{% endfor %}
+{% endif %}
+<hr class="ce-div">
+<form action="{% url 'polls:vote' pollset.id %}" method="post">
 {% csrf_token %}
+
+{% for question in pollset.question_set.all %}
+<h3>{{ forloop.counter }}) {{ question.question_text }}</h3>
+<fieldset id="{{ question.id }}">
 {% for choice in question.choice_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <input type="radio" name="choice{{ question.id }}" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+{% endfor %}
+</fieldset>
+<br/>
 {% endfor %}
 <input type="submit" value="Vote">
 </form>
-{% if testtext %}<p><strong>{{ testtext }}</strong></p>{% endif %}
+
+
+
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+
+<div class="col-xs-12 col-md-4">
+<p>Publication date: <strong>{{ pollset.pub_date }}</strong></p>
+{% if request.user in pollset.user_performed.all %}
+<p><i class="fas fa-check-circle" style="color:green"></i> You have voted this poll set</p>
+{% else %}
+<p style="color:#d9534f"> You haven't voted yet</p>
+{% endif %}
+
+
+<p><a href="{% url 'polls:results' pollset.id %}">Go to results >>></a></p>
+ {% if pollset.user_performed.all %}<hr class="ce-div"><p>Voted users:</p><p>
+
+<strong>{% for voted_user in pollset.user_performed.all %}{{ voted_user }} {% endfor %}</strong></p>{% endif %}
+</div>
+
+       
+</div>
+</div>
+</section>
+
+
+
+{% endblock %}

@@ -30,7 +30,7 @@ class PollsetAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['poll_text']
     fieldsets = [
-        (None,               {'fields': ['poll_text','is_active','require_authorization']}),
+        (None,               {'fields': ['poll_text','poll_addtext','is_active','require_authorization']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
         ('user_performed', {'fields': ['user_performed']}),
     ]

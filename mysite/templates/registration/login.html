@@ -1,20 +1,59 @@
 <!-- templates/registration/login.html -->
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
-
+{% block title %}Login form{% endblock %}
 {% block content %}
-<h2>Login</h2>
+
+	<section class="grid-row frame-layout frame-layout-0">
+		<div class="container">   
+			<div class="row flexrow">
+				<div class="col-xs-12 col-md-9">
+					<section id="c1051" class="main frame-layout frame-layout-0">
+						<div class="container">
+							<div class="frame frame-default frame-type-header ">
+
+
+
+
+<header>
+	<h2 class="">Login form</h2>
+	<h3 class="">Please enter your login credentials and press submit button.</h3>
+</header>
+
 {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
+{% for message in messages %}
+<div class="select-error"></div><i class="fa"></i><span class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</span>
+{% endfor %}
 {% endif %}
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<div class="select-error"></div><i class="fa"></i><span class="message">{{ error }}</span>
+{% endfor %}
+{% endif %}
+
+
 <form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
+{% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
+    <button type="submit">Login</button>
 </form>
+
+							</div>
+						</div>
+					</section>
+				
+				</div>
+			
+				<div class="col-xs-12 col-md-3">
+					
+				</div>
+			
+			</div>
+		</div>
+	</section>
 {% endblock %}

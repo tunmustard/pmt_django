@@ -1,14 +1,63 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<!-- templates/base.html -->
+{% extends 'base.html' %}
 
-{% if latest_question_list %}
-{% if testtext %}<p><strong>{{ testtext }}</strong></p>{% endif %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-		{% if question.user_performed.all %}<li><p>Voted users: <strong>{% for voted_user in question.user_performed.all %}{{ voted_user }} {% endfor %}</strong></p></li>{% endif %}
-    {% endfor %}
-    </ul>
+{% block content %}
+
+{% if latest_polls_list %}
+{% for pollset in latest_polls_list %}
+<section id="c13525" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-div "><hr class="ce-div"></div></div></section>
+<section class="grid-row frame-layout frame-layout-0">
+<div class="container">
+<div class="row flexrow">
+<div class="col-xs-12 col-md-8">
+<section id="c21345" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-textpic "><div class="ce-textpic ce-right ce-below"><div class="ce-bodytext">
+<h2 class="">
+<a href="{% url 'polls:detail' pollset.id %}" style="text-decoration:underline">Poll set: {{ pollset.poll_text }}</a>
+</h2>
+{% if pollset.poll_addtext %}<h3>{{ pollset.poll_addtext }}</h3>{% endif %}
+<p><strong>{{ pollset.pub_date }}</strong></p>
+{% if pollset.user_performed.all %}<p>Voted users:
+<strong>{% for voted_user in pollset.user_performed.all %}{{ voted_user }} {% endfor %}</strong></p>{% endif %}
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+
+<div class="col-xs-12 col-md-4">
+    <a href="{% url 'polls:results' pollset.id %}"> Go to results >>>> </a>        
+</div>
+
+       
+</div>
+</div>
+</section>
+{% endfor %}
 {% else %}
-    <p>No polls are available.</p>
+<section class="grid-row frame-layout frame-layout-0">
+<div class="container">
+<div class="row flexrow">
+<div class="col-xs-12 col-md-8">
+<section id="c21345" class="main frame-layout frame-layout-0"><div class="container"><div class="frame frame-default frame-type-textpic "><div class="ce-textpic ce-right ce-below">
+<div class="ce-bodytext">
+<h3>No polls available</h3>
+<p><strong></strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!--
+<div class="col-xs-12 col-md-4">
+            
+</div>
+-->       
+</div>
+</div>
+</section>
 {% endif %}
+{% endblock %}
